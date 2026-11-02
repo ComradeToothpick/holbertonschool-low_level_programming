@@ -1,4 +1,9 @@
 #include <stdio.h>
+/* 
+ * main - Entry point
+ * Demonstrates the c function printf
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
