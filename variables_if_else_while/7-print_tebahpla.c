@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ * Prints each letter in the alphabet in lower case in reverse order,
+ * followed by a newline
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int letter;
+
+	letter = 0;
+	while (letter < 26)
+	{
+		putchar(122 - letter++);
+	}
+	putchar('\n');
+	return (0);
+}
