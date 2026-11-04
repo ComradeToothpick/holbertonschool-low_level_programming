@@ -14,6 +14,5 @@ int main(void)
 	{
 		putchar(97 + letter++);
 	}
-	putchar(13);
 	return (0);
 }
