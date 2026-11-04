@@ -17,7 +17,7 @@ int main(void)
 	g = n % 10;
 	if (g < 0)
 	{
-		g *= -1;
+		g = g * -1;
 	}
 	if (g < 6 && g != 0)
 	{
