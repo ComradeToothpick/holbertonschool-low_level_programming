@@ -4,7 +4,7 @@
 
 /**
  * main - Entry point
- * Assigns a random number to the variable n, 
+ * Assigns a random number to the variable n,
  * then prints whether the number is positive or negative
  * Return: Always 0 (Success)
  */
