@@ -14,7 +14,7 @@ int main(void)
 
 	length = (int)(sizeof(input) / sizeof(input[0]));
 	n = 0;
-	while (n < length)
+	while (n < length - 1)
 	{
 		c = input[n++];
 		_putchar(c);
