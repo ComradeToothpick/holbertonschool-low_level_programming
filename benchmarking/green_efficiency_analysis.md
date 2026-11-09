@@ -57,3 +57,4 @@ Optimization efforts should focus their attention towards the PROCESS step, as
 that is the most time consuming function. 
 Need to conduct an investigation into why the time to complete on the PROCESS
 step are so inconsistent.
+Live metric collection should be considered for further data collection.
