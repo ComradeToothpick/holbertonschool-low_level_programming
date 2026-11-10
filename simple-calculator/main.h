@@ -3,5 +3,7 @@
 
 bool handle_choice(char input);
 void print_menu(void);
+void add(void);
+void clear_buffer(void);
 
 #endif

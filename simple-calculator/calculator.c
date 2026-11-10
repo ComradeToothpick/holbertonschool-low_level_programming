@@ -10,10 +10,8 @@
 int main(void)
 {
 	bool should_print_menu;
-	bool input_clear;
 	bool running;
 	char choice;
-	char dump;
 
 	running = true;
 	should_print_menu = true;
@@ -25,15 +23,7 @@ int main(void)
 		}
 		printf("Choice: ");
 		scanf("%c", &choice);
-		input_clear = true;
-		while (input_clear)
-		{
-			scanf("%c", &dump);
-			if (dump == '\n')
-			{
-				input_clear = false;
-			}
-		}
+		clear_buffer();
 		if (choice >= '0' && choice <= '4')
 		{
 			should_print_menu = true;
@@ -75,5 +65,47 @@ bool handle_choice(char input)
 	{
 		return (false);
 	}
+	if (input == '1')
+	{
+		add();
+		return (true);
+	}
 	return (true);
+}
+
+/**
+ * clear_buffer - clears the input buffer
+ */
+void clear_buffer(void)
+{
+	bool clearing;
+	char dump;
+
+	clearing = true;
+	while (clearing)
+	{
+		scanf("%c", &dump);
+		if (dump == '\n')
+		{
+			clearing = false;
+		}
+	}
+}
+
+/**
+ * add - Collects input from user to determine values A & B,
+ * then prints their sum
+ */
+void add(void)
+{
+	int a;
+	int b;
+
+	printf("A: ");
+	scanf("%d", &a);
+	clear_buffer();
+	printf("B: ");
+	scanf("%d", &b);
+	clear_buffer();
+	printf("Result: %d\n", a + b);
 }
