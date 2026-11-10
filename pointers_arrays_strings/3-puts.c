@@ -14,7 +14,10 @@ void _puts(char *str)
 	while (c != 0 || length == 0)
 	{
 		c = *(str + length++);
-		_putchar(c);
+		if (c != 0)
+		{
+			_putchar(c);
+		}
 	}
 	_putchar('\n');
 }
