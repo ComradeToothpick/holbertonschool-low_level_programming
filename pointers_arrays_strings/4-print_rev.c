@@ -19,7 +19,7 @@ void print_rev(char *s)
 			length++;
 		}
 	}
-	while (length >= 0)
+	while (length > 0)
 	{
 		c = *(s + length--);
 		if (c != 0)
