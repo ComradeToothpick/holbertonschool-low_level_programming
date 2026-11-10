@@ -22,7 +22,10 @@ void print_rev(char *s)
 	while (length >= 0)
 	{
 		c = *(s + length--);
-		_putchar(c);
+		if (c != 0)
+		{
+			_putchar(c);
+		}
 	}
 	_putchar('\n');
 }
