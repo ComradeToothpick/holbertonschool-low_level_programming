@@ -10,8 +10,8 @@ void print_rev(char *s)
 	char c;
 
 	length = 0;
-	c = 0;
-	while (c != 0 || length == 0)
+	c = '0';
+	while (c != 0)
 	{
 		c = *(s + length);
 		if (c != 0)
@@ -19,12 +19,15 @@ void print_rev(char *s)
 			length++;
 		}
 	}
-	while (length > 0)
+	if (length != 0)
 	{
-		c = *(s + length--);
-		if (c != 0)
+		while (length >= 0)
 		{
-			_putchar(c);
+			c = *(s + length--);
+			if (c != 0)
+			{
+				_putchar(c);
+			}
 		}
 	}
 	_putchar('\n');
