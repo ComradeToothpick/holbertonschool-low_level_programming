@@ -21,5 +21,7 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *);
 char *cap_string(char *);
 int is_seperator(char c);
+char *leet(char *);
+char is_leet(char c);
 
 #endif
