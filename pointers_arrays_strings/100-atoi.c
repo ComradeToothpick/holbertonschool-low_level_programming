@@ -22,10 +22,17 @@ int _atoi(char *s)
 	while (place >= 0 && c != 0)
 	{
 		c = *(s + length++);
-		if (c >= 48 && c <= 57)
+		if (c >= '0' && c <= '9')
 		{
 			total *= 10;
-			total += ((int)(c - 48));
+			if (sign == -1)
+			{
+				total -= ((int)(c - '0'));
+			}
+			else
+			{
+				total += ((int)(c - '0'));
+			}
 			place++;
 		}
 		else if (place > 0)
@@ -37,6 +44,5 @@ int _atoi(char *s)
 			sign *= -1;
 		}
 	}
-	total *= sign;
 	return (total);
 }
