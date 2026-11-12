@@ -41,7 +41,7 @@ int _atoi(char *s)
 			sign_count--;
 		}
 	}
-	if (sign_count < 0)
+	if ((sign_count < 0 && total > 0) || (sign_count >= 0 && total < 0))
 	{
 		total = total * -1;
 	}
