@@ -9,13 +9,13 @@
 int _atoi(char *s)
 {
 	char c;
-	int sign_count;
 	int length;
 	int total;
 	int place;
+	int sign;
 
-	sign_count = 0;
 	c = '0';
+	sign = 1;
 	length = 0;
 	total = 0;
 	place = 0;
@@ -32,18 +32,11 @@ int _atoi(char *s)
 		{
 			place = -1;
 		}
-		else if (c == '+')
-		{
-			sign_count++;
-		}
 		else if (c == '-')
 		{
-			sign_count--;
+			sign *= -1;
 		}
 	}
-	if ((sign_count < 0 && total > 0) || (sign_count >= 0 && total < 0))
-	{
-		total = total * -1;
-	}
+	total *= sign;
 	return (total);
 }
