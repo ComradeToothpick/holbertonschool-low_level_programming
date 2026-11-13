@@ -23,5 +23,6 @@ char *cap_string(char *);
 int is_seperator(char c);
 char *leet(char *);
 char is_leet(char c);
+char *_memset(char *s, char b, unsigned int n);
 
 #endif
