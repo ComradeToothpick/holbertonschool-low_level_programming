@@ -102,6 +102,7 @@ void clear_buffer(void)
  * product if mode == 3,
  * or ratio if mode == 4
  * @mode: the selected mode to print the output of
+ * NOTE: Outputs are always printed in float form to 2 decimal places
  */
 void opperate(int mode)
 {
@@ -116,18 +117,25 @@ void opperate(int mode)
 	clear_buffer();
 	if (mode == 1)
 	{
-		printf("Result: %d\n", a + b);
+		printf("Result: %.2f\n", (float)a + (float)b);
 	}
 	else if (mode == 2)
 	{
-		printf("Result: %d\n", a - b);
+		printf("Result: %.2f\n", (float)a - (float)b);
 	}
 	else if (mode == 3)
 	{
-		printf("Result: %d\n", a * b);
+		printf("Result: %.2f\n", (float)a * (float)b);
 	}
 	else if (mode == 4)
 	{
-		printf("Result: %.2f\n", (float)a / (float)b);
+		if (b == 0)
+		{
+			printf("Error: division by zero\n");
+		}
+		else
+		{
+			printf("Result: %.2f\n", (float)a / (float)b);
+		}
 	}
 }
