@@ -16,18 +16,25 @@ char *_strstr(char *haystack, char *needle)
 	int i;
 	int needle_found;
 
+	if (*needle == 0)
+	{
+		return (haystack);
+	}
 	c = '0';
 	i = 0;
-	needle_found = 0;
 	while (c != 0)
 	{
 		c = *(haystack + i);
 		if (c != 0 && c == *needle)
 		{
-			needle_found = valid_string(haystack + i, needle);
-			if (needle_found == 1)
+			needle_found = valid_string(haystack, needle, i);
+			if (needle_found == -1)
 			{
 				return (haystack + i);
+			}
+			else
+			{
+				i += needle_found;
 			}
 		}
 		i++;
@@ -37,29 +44,39 @@ char *_strstr(char *haystack, char *needle)
 
 /**
  * valid_string - Checks if the string accept begins at the address s
- * @s: the address of the beginning of a potential match to accept
+ * @s: the address of the beginning character of the string to search
  * @accept: The substring s is being validated against
- * Return: 1 if the substring was found, otherwise 0
+ * @k: How far into s to start checking for matches
+ * Return: -1 if the substring was found, otherwise, then umber of
+ * characters that were checked (i)
  */
-int valid_string(char *s, char *accept)
+int valid_string(char *s, char *accept, int k)
 {
 	int i;
 	char c;
 
+	if (*accept == 0)
+	{
+		return (-1);
+	}
 	i = 0;
 	c = '0';
 	while (c != 0)
 	{
 		c = *(accept + i);
-		if (c == 0 && i > 0)
+		if (c == 0)
 		{
-			return (1);
+			return (-1);
 		}
-		if (c != *(s + i))
+		if (*(s + k + i) == 0)
 		{
-			return (0);
+			return (i);
+		}
+		if (c != *(s + k + i))
+		{
+			return (i);
 		}
 		i++;
 	}
-	return (1);
+	return (-1);
 }

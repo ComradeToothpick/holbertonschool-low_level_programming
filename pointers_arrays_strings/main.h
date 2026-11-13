@@ -29,7 +29,7 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 int is_accept(char c, char *accept);
 char *_strpbrk(char *s, char *accept);
-int valid_string(char *s, char *accept);
+int valid_string(char *s, char *accept, int i);
 char *_strstr(char *haystack, char *needle);
 
 #endif
