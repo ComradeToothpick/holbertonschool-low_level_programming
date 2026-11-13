@@ -49,7 +49,7 @@ int is_accept(char c, char *accept)
 	while (accept_c != 0)
 	{
 		accept_c = *(accept + i);
-		if (c == accept_c)
+		if (c == accept_c && accept_c != 0)
 		{
 			return (1);
 		}
