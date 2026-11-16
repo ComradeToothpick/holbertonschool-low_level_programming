@@ -61,7 +61,7 @@ char *str_concat_malloc(char *s1, char *s2, unsigned int size)
 		i = 0;
 		j = 0;
 		c = '0';
-		while (c != 0)
+		while (c != 0 && s1 != NULL)
 		{
 			c = s1[i];
 			if (c != 0)
@@ -71,7 +71,7 @@ char *str_concat_malloc(char *s1, char *s2, unsigned int size)
 			}
 		}
 		c = '0';
-		while (c != 0)
+		while (c != 0 && s2 != NULL)
 		{
 			c = s2[j];
 			output[i + j] = c;
