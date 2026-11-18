@@ -10,5 +10,6 @@ void free_strings(char *s1, char *s2, int s1_null, int s2_null);
 int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
+int getstrlen(int ac, char **av);
 
 #endif
