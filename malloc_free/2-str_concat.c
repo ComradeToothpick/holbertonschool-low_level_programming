@@ -9,12 +9,9 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i;
-	unsigned int j;
-	char c;
-	char *output;
-	int s1_null;
-	int s2_null;
+	unsigned int i, j;
+	char c, *output;
+	int s1_null, s2_null;
 
 	s1_null = 0;
 	s2_null = 0;
