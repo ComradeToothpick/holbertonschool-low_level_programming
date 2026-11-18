@@ -35,7 +35,10 @@ char *str_concat(char *s1, char *s2)
 	while (c != 0)
 	{
 		c = *(s1 + i);
-		i++;
+		if (c != 0)
+		{
+			i++;
+		}
 	}
 	j = 0;
 	c = '0';
