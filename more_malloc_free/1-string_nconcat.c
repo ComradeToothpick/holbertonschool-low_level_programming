@@ -80,6 +80,8 @@ char *malloc_output(char *s1, char *s2, unsigned int n)
 		j++;
 	}
 	out = malloc(sizeof(char) * (i + j));
+	if (out == NULL)
+		return (NULL);
 	if (j > n)
 		out[i + n] = '\0';
 	return (out);
