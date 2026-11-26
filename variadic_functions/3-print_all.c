@@ -11,9 +11,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	int i, length;
+	int i, length, code;
 	char c;
 
+	if (format == NULL)
+	{
+		return;
+	}
 	i = 0;
 	c = '0';
 	length = 0;
@@ -23,11 +27,18 @@ void print_all(const char * const format, ...)
 		length++;
 	}
 	va_start(list, format);
-	while (i < length - 1)
+	while (i < length - 2)
 	{
-		handle_cases(&list, i, length, format);
+		code = handle_cases(&list, i, format);
+		switch (code)
+		{
+		case 0:
+			printf(", ");
+			break;
+		}
 		i++;
 	}
+	handle_cases(&list, i, format);
 	printf("\n");
 }
 
@@ -36,16 +47,15 @@ void print_all(const char * const format, ...)
  * and prints them
  * @list: The memory address of the started list of arguments
  * @i: The index of the char in format to check
- * @length: The number of arguments total in list
  * @format: The string containing the format of the arguments to print them as
  * Return: 0 on success, 1 if *(format + i) is not a valid format char
  */
-int handle_cases(va_list *list, int i, int length, const char * const format)
+int handle_cases(va_list *list, int i, const char * const format)
 {
 	char c, *str;
 
 	c = *(format + i);
-	switch (c) 
+	switch (c)
 	{
 	case 'c':
 		printf("%c", va_arg(*list, int));
@@ -67,10 +77,6 @@ int handle_cases(va_list *list, int i, int length, const char * const format)
 		break;
 	default:
 		return (1);
-	}
-	if (i < length - 2)
-	{
-		printf(", ");
 	}
 	return (0);
 }

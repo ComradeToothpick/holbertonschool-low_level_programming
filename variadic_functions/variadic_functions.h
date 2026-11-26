@@ -6,6 +6,6 @@ int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-int handle_cases(va_list *list, int i, int length, const char * const format);
+int handle_cases(va_list *list, int i, const char * const format);
 
 #endif
