@@ -65,7 +65,7 @@ int _atoi(char *s)
 		{
 			sign *= -1;
 		}
-		else
+		else if (c != 0)
 		{
 			return (0);
 		}
